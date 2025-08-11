@@ -1,0 +1,26 @@
+CharCount = [0, 0, 0, 0, 0, 0]  # a, e, i, o, u, non-vowels
+
+
+def CountVowels(InString):
+    for i in range(0, len(InString)-1):  # loop through all the characters
+        NextChar = InString[i]
+        NextChar = NextChar.lower()
+        if NextChar == 'a':
+            CharCount[0] = CharCount[0] + 1
+        elif NextChar == 'e':
+            CharCount[1] = CharCount[1] + 1
+        elif NextChar == 'i':
+            CharCount[2] = CharCount[2] + 1
+        elif NextChar == 'o':
+            CharCount[3] = CharCount[3] + 1
+        elif NextChar == 'u':
+            CharCount[4] = CharCount[4] + 1
+        else:
+            flag = True
+            if flag:
+                CharCount[5] += 1
+
+
+CountVowels("Above")
+print(CharCount)
+print("The number of letters outside vowels: ", CharCount[5])
